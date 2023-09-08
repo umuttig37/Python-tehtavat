@@ -1,11 +1,13 @@
-input = int(input("Anna kokonaisluku: "))
+luku = int(input("Anna kokonaisluku: "))
+isnotalkuluku = False
+for x in range(luku):
+    if x == 0 or x == luku or  x == 1:
+        continue
 
-if input > 1:
-    for i in range(2, (int(input / 2) + 1)):
-        if (input % i) == 0:
-            print("\n" + str(input) + " ei ole alkuluku")
-            break
-    else:
-        print("\n" + str(input) + " on alkuluku")
-else:
-    print("\n" + str(input) + " ei ole alkuluku")
+    if luku % 1 == 0 and luku % luku == 0 and luku % x == 0:
+            isnotalkuluku = True
+
+
+
+if isnotalkuluku == True:
+    print("not alkuluku!")

@@ -1,5 +1,6 @@
 import math
 
+
 gallons = input("Anna bensiinin määrä nestegallonoina: ")
 
 
