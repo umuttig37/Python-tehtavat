@@ -1,5 +1,6 @@
 import math
 
+
 pizza = []
 
 diameter1 = float(input("Anna ensimmäisen pitsan halkaisija senttimetreinä: "))

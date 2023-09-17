@@ -1,5 +1,6 @@
 userInput = input("Anna numero: ")
 
+
 numbers = []
 
 while userInput != "":

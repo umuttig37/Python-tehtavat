@@ -1,14 +1,15 @@
 list = []
 
 while True:
-    input = input("Anna numero: ")
-    if input == "":
+    numerot = input("Anna luku: ")
+    if numerot.isnumeric():
+        numerot = int(numerot)
+    if numerot == "":
         break
-    list.append(float(input))
+    if type(numerot) == str:
+        continue
+    list.append(numerot)
 
-list.sort(reverse=True)
+list.sort()
 
-print("Viisi suurinta numeroa ovat: \n")
-
-for i in range(5):
-    print(list[i])
+print(list[-5:])

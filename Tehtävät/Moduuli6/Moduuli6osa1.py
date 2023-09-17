@@ -1,5 +1,6 @@
 import random
 
+
 def random_number():
     randomNumber = random.randint(1, 6)
     return randomNumber

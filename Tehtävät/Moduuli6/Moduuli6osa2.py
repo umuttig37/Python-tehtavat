@@ -3,6 +3,7 @@ import random
 maxNoppa = int(input("Anna nopan maksimisilmäluku: "))
 
 
+
 def randomLuku(maxnumber):
     randomLuku = random.randint(1, maxnumber)
     return randomLuku
