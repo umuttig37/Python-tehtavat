@@ -22,6 +22,38 @@ class Auto:
     def kulje(self, tuntimäärä):
         self.kuljettuMatka += self.hetkellinenNopeus * tuntimäärä
         print("Kuljettu matka: ", self.kuljettuMatka)
+
+
+class Kilpailu:
+    def __init__(self, nimi, pituus, autot):
+        self.nimi = nimi
+        self.pituus = pituus
+        self.autot = autot
+
+    def tunti_kuluu(self, tunti):
+        for auto in self.autot:
+            auto.kiihdytä(random.randint(-15, 15))
+            auto.kulje(tunti)
+
+    def tulosta_tilanne(self):
+        print("Rekisteritunnus\tNykyinen nopeus (km/h)\tKuljettu matka (km)")
+        for auto in self.autot:
+            if auto.kuljettuMatka > 8000:
+                print(f"{auto.rekisteritunnus:15} {auto.hetkellinenNopeus:15} {auto.kuljettuMatka:15} Voittaja!")
+            else:
+                print(f"{auto.rekisteritunnus:15} {auto.hetkellinenNopeus:15} {auto.kuljettuMatka:15}")
+
+
+
+    def kilpailu_ohi(self):
+        for auto in self.autot:
+            if auto.kuljettuMatka >= self.pituus:
+                return True
+        return False
+
+
+
+
 #osa1
 auto = Auto("abc-123", 143 )
 auto.ShowSpecs()
@@ -54,4 +86,27 @@ while(onkokuljettu == False):
                 print("Auto" + str(autolista[x].rekisteritunnus), "Voitti!")
                 onkokuljettu = True
             print("auto " + str(autolista[x].rekisteritunnus), autolista[x].kuljettuMatka)
+
+#Moduuli10osa4
+autot = []
+abcplussable = 0
+for x in range(10):
+    abcplussable += 1
+    huippunopeus = random.randint(100,200)
+    autot.append(Auto("ABC-" + str(abcplussable), huippunopeus))
+
+
+kilpailu = Kilpailu("Suuri romuralli", 8000, autot)
+
+tunti = 0
+
+while not kilpailu.kilpailu_ohi():
+    kilpailu.tunti_kuluu(1)
+    tunti += 1
+    if tunti % 10 == 0:
+        print(f"Tunti {tunti} tilanne:")
+        kilpailu.tulosta_tilanne()
+
+print("Kilpailu päättyi!")
+kilpailu.tulosta_tilanne()
 
