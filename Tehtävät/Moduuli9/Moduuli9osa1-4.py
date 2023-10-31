@@ -52,8 +52,23 @@ class Kilpailu:
         return False
 
 
+class Sähköauto(Auto):
+    def __init__(self, rekkari, huippunopeus, akkukapasiteetti):
+        self.rekkari = rekkari
+        self.huippunopeus = huippunopeus
+        self.akkukapasiteetti = akkukapasiteetti
+        super().__init__(rekkari, huippunopeus)
 
 
+class BensaAuto(Auto):
+    def __init__(self, rekkari, huippunopeus, tankkikoko):
+        self.rekkari = rekkari
+        self.huippunopeus = huippunopeus
+        self.tankkikoko = tankkikoko
+        super().__init__(rekkari, huippunopeus)
+
+
+"""
 #osa1
 auto = Auto("abc-123", 143 )
 auto.ShowSpecs()
@@ -109,4 +124,11 @@ while not kilpailu.kilpailu_ohi():
 
 print("Kilpailu päättyi!")
 kilpailu.tulosta_tilanne()
+"""
 
+sähköauto = Sähköauto("SHK-123", 180, 31.31)
+bensaAuto = BensaAuto("PWR-123", 300, 60.01)
+sähköauto.kiihdytä(100)
+bensaAuto.kiihdytä(300)
+sähköauto.kulje(3)
+bensaAuto.kulje(2)
