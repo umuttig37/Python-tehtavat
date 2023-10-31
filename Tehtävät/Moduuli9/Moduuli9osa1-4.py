@@ -102,7 +102,7 @@ while(onkokuljettu == False):
                 onkokuljettu = True
             print("auto " + str(autolista[x].rekisteritunnus), autolista[x].kuljettuMatka)
 
-#Moduuli10osa4
+#Moduuli10osa4 
 autot = []
 abcplussable = 0
 for x in range(10):

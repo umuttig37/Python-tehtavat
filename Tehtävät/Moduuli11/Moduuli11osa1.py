@@ -1,3 +1,4 @@
+
 class Julkaisu:
     def __init__(self, julkaisu):
         self.julkaisu = julkaisu
